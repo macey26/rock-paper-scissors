@@ -6,10 +6,15 @@
 <body>
 
 	<script type="text/javascript">
-		
-		let computerPlay  = (rock, paper, scissors) => computerPlay;
 
-		alert(computerPlay[Math.floor(Math.random() * 3)];
+
+		//generates rock paper or scissors randomly
+		const computerPlay = () => {
+		const comPick = ["rock", "paper", "scissors"];
+		return Math.floor(Math.random() * comPick.length);
+	};
+
+	console.log(computerPlay());
 
 	</script>
 </body>
