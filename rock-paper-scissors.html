@@ -12,9 +12,41 @@
 		const computerPlay = () => {
 		const comPick = ["rock", "paper", "scissors"];
 		return Math.floor(Math.random() * comPick.length);
+
 	};
 
 	console.log(computerPlay());
+
+
+
+      // creates a round of rock paper scissors
+	const playRound = (playerSelection, computerSelection) => {
+
+		let computerResult = computerPlay();
+
+		switch(computerResult){
+
+			case playerSelection == computerSelection: 
+			    return "It's a tie";
+			break; 
+            case playerSelection == "rock" && computerSelection == "scissors":
+                return "Rock beats scissors";
+
+
+			default:
+			return "Not sure";  
+			
+
+		};
+
+		console.log(computerResult);
+	};
+
+const playerSelection = prompt("please enter your choice of rock paper scissors").toLowerCase();
+const computerSelection = computerPlay();
+console.log(playRound(playerSelection, computerSelection));
+
+
 
 	</script>
 </body>
