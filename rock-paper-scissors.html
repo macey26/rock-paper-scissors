@@ -11,8 +11,8 @@
 		//generates rock paper or scissors randomly
 		const computerPlay = () => {
 		const comPick = ["rock", "paper", "scissors"];
-		return Math.floor(Math.random() * comPick.length);
-
+		return [Math.floor(Math.random() * comPick.length)];
+       
 	};
 
 	console.log(computerPlay());
@@ -23,23 +23,32 @@
 	const playRound = (playerSelection, computerSelection) => {
 
 		let computerResult = computerPlay();
+		
 
-		switch(computerResult){
+		if (computerResult == playerResult){
+			 return "It's a tie";
+		}
 
-			case playerSelection == computerSelection: 
-			    return "It's a tie";
-			break; 
-            case playerSelection == "rock" && computerSelection == "scissors":
-                return "Rock beats scissors";
+		switch(playerResult){
 
+            case (computerResult == "paper" && playerResult == "rock"):
+            return "The Computer WINS this round"; 
+            break;    
 
+            case (computerResult == "scissors"):
+            return "Computer returned scissors"; 
+            break;   
+
+            case (computerResult == "rock"):
+            return "Computer returned paper"; 
+            break;   
 			default:
 			return "Not sure";  
 			
 
 		};
 
-		console.log(computerResult);
+		console.log(computerResult());
 	};
 
 const playerSelection = prompt("please enter your choice of rock paper scissors").toLowerCase();
