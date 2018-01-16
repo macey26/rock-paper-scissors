@@ -16,7 +16,7 @@
        
 	};
 
-	console.log(computerPlay());
+	
 
 
 
@@ -26,34 +26,44 @@
 
     };
 
-    console.log(userPlay());
+   
+
+    
 
       // creates a round of rock paper scissors
 	let playRound = (playerSelection, computerSelection) => {
 
+      let play = playerSelection;
+      let com = computerSelection;
 
-		if (playerSelection == computerSelection){
-			 alert("It's a tie");
-		 }else if(computerSelection == "paper" && playerSelection == "rock"){
-		 alert ("The Computer WINS this round"); 
-            }
+      if (play === com){
+            alert ("It's a tie"); 
+      } else if(com === "paper" && play === "rock" ) {
+      	alert ("The Computer WINS this round"); 
+      }
+	
 
-
-	switch(computerSelection){
-            case (computerSelection == "paper" && playerSelection == "rock"):
+	/*switch(playerSelection){
+            case (computerSelection === "paper" && playerSelection === "rock"):
             alert ("The Computer WINS this round"); 
             break;    
-            case (computerSelection == "scissors" && playerSelection == "rock"):
+            case (computerSelection === "scissors" && playerSelection === "rock"):
             alert ("Rock beats Scissors You WIN"); 
-            break;   
-           
+            break;  
+            case (playerSelection === computerSelection):
+            alert ("It's a tie"); 
+            break;  
+          
 			
 		};		
-		
+		*/
 
 };
 
-console.log(playRound());
+let computerSelection = computerPlay();
+let playerSelection = userPlay();
+
+console.log(playRound( console.log(computerSelection), console.log(playerSelection)));
 
 	</script>
 </body>
