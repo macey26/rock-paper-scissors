@@ -9,40 +9,38 @@
 
 
 //generates rock paper or scissors randomly from the computer
-		let computerPlay = () => {
-		let comPick = ["rock", "paper", "scissors"];
-		let computer = comPick[Math.floor(Math.random() * comPick.length)];
-		return "computer " + computer;
-	};
-	     let userPlay = () => {
-         let player = prompt("please enter your choice of rock paper scissors").toLowerCase();
-           return "player " + player;
-    };
-  
-      // creates a round of rock paper scissors
-	function playRound(playerSelection, computerSelection){
-  
-  console.log("computer chose " + computerSelection);
-  console.log("player chose " + playerSelection);
+let computerPlay = () => {
+	let comPick = ["rock", "paper", "scissors"];
+	let computer = comPick[Math.floor(Math.random() * comPick.length)];
+	return computer;
+};
+		 
+let userPlay = () => {
+	let player = prompt("please enter your choice of rock paper scissors").toLowerCase();
+	return player;
+};
 
-     if (playerSelection === computerSelection){
-     	alert("its a tie");
-     } 
-     else if (playerSelection === "rock"){
-     	  if (computerSelection === "scissors"){
-     	  	alert("rock WINS");
-     	  }
-     	  else {
-     	  	alert("paper WINS");
-     	  }
-     }
+		// creates a round of rock paper scissors
+function playRound(playerSelection, computerSelection){
 
+	console.log("computer chose " + computerSelection);
+	console.log("player chose " + playerSelection);
+
+	if (playerSelection === computerSelection){
+		 alert("its a tie");
+	} 
+	else if (playerSelection === "rock"){
+		if (computerSelection === "scissors"){
+			alert("rock WINS");
+		} else {
+			alert("paper WINS");
+		}
+	}
 };  
-  let computerSelection = computerPlay();
-  let playerSelection = userPlay();
 
+let computerSelection = computerPlay();
+let playerSelection = userPlay();
 console.log(playRound(playerSelection, computerSelection));
-
 
 	</script>
 </body>
