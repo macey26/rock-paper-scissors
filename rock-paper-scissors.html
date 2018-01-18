@@ -11,59 +11,38 @@
 //generates rock paper or scissors randomly from the computer
 		let computerPlay = () => {
 		let comPick = ["rock", "paper", "scissors"];
-		let computerSelection = comPick[Math.floor(Math.random() * comPick.length)];
-		return computerSelection;
-       
+		let computer = comPick[Math.floor(Math.random() * comPick.length)];
+		return "computer " + computer;
 	};
-
-	
-
-
-
 	     let userPlay = () => {
-         let playerSelection = prompt("please enter your choice of rock paper scissors").toLowerCase();
-           return playerSelection;
-
+         let player = prompt("please enter your choice of rock paper scissors").toLowerCase();
+           return "player " + player;
     };
-
-   
-
-    
-
+  
       // creates a round of rock paper scissors
-	let playRound = (playerSelection, computerSelection) => {
+	function playRound(playerSelection, computerSelection){
+  
+  console.log("computer chose " + computerSelection);
+  console.log("player chose " + playerSelection);
 
-      let play = playerSelection;
-      let com = computerSelection;
+     if (playerSelection === computerSelection){
+     	alert("its a tie");
+     } 
+     else if (playerSelection === "rock"){
+     	  if (computerSelection === "scissors"){
+     	  	alert("rock WINS");
+     	  }
+     	  else {
+     	  	alert("paper WINS");
+     	  }
+     }
 
-      if (play === com){
-            alert ("It's a tie"); 
-      } else if(com === "paper" && play === "rock" ) {
-      	alert ("The Computer WINS this round"); 
-      }
-	
+};  
+  let computerSelection = computerPlay();
+  let playerSelection = userPlay();
 
-	/*switch(playerSelection){
-            case (computerSelection === "paper" && playerSelection === "rock"):
-            alert ("The Computer WINS this round"); 
-            break;    
-            case (computerSelection === "scissors" && playerSelection === "rock"):
-            alert ("Rock beats Scissors You WIN"); 
-            break;  
-            case (playerSelection === computerSelection):
-            alert ("It's a tie"); 
-            break;  
-          
-			
-		};		
-		*/
+console.log(playRound(playerSelection, computerSelection));
 
-};
-
-let computerSelection = computerPlay();
-let playerSelection = userPlay();
-
-console.log(playRound( console.log(computerSelection), console.log(playerSelection)));
 
 	</script>
 </body>
