@@ -30,25 +30,25 @@ let playRound = (playerSelection, computerSelection) => {
     switch(playerSelection){
 	    case "rock" :
 		    if (computerSelection === "scissors"){
-			alert("Rock beats Scissors, You WIN!!!");
+			return "You WIN!!!";
 		    } else if (computerSelection === "paper") {
-			alert("Paper beats Rock, Computer WINS");
+			return "Computer WINS";
 		    }else {
 
-	      	 alert("Its a tie");
+	      	 return "Its a tie";
 	        }
 	    break; 
 
 	    case "paper": 
 
 		    if (computerSelection === "rock") { 
-            alert("Paper beats Rock, You WIN!!!");
+            return "You WIN!!!";
 		    } else if (computerSelection === "scissors") {
 
-			alert("Scissors beat paper, Computer WINS!!!");
+			return "Computer WINS!!!";
 		    } else {
 
-	      	 alert("Its a tie");
+	      	 return "Its a tie";
 	        }
 
         break;
@@ -57,14 +57,14 @@ let playRound = (playerSelection, computerSelection) => {
 
 		    if (computerPlay === "paper"){
 
-			alert("Scissors beats paper, You WIN!!");
+			return "You WIN!!";
 		    }else if(computerPlay === "rock") {
 
-		    alert("Rock beats scissors, Computer WINS!!!");
+		    return "Computer WINS!!!";
 
 	        } else {
 
-	      	 alert("Its a tie");
+	      	 return "Its a tie";
 	        }
 
 	    break;
@@ -76,7 +76,22 @@ let playRound = (playerSelection, computerSelection) => {
        let computerScore = 0;
        let rounds = 5;
 
-       for (var i = 0; i < rounds; i >= 0; i++) {
+       for (let i = 0; i < rounds; i++) {
+
+       	if (return === "Computer WINS!!!"){
+
+       		computerScore +1;
+
+       		console.log(computerScore);
+       	} else if (return === "You WIN!!!" ) {
+
+       		playerScore +1;
+
+       		console.log(playerScore);
+       	} else {
+
+       		console.log("You tied")
+       	}
        
        }
 
@@ -87,7 +102,7 @@ console.log(playRound(playerSelection, computerSelection));
 
   }
 
-  game();
+  console.log(game());
 
 	</script>
 </body>
