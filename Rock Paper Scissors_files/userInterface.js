@@ -1,0 +1,113 @@
+let answer = ""
+
+
+let computerPlay = () => {
+	let comPick = ["rock", "paper", "scissors"];
+	let computer = comPick[Math.floor(Math.random() * comPick.length)];
+	return computer;
+};
+	
+	 
+let userPlay = () => {
+	let player = prompt("please enter your choice of rock paper scissors").toLowerCase();
+	return player;
+};
+
+let playRound = (playerSelection, computerSelection) => {
+
+    console.log("Player chose " + playerSelection);
+	console.log("Computer chose " + computerSelection);
+	
+    switch(playerSelection){
+	    case "rock" :
+		    if (computerSelection === "scissors"){
+			answer = "You WIN!!!";
+		    } else if (computerSelection === "paper") {
+			answer = "Computer WINS!!!";
+		    }else {
+
+	      	 answer = "Its a tie";
+	        }
+	    break; 
+
+	    case "paper": 
+
+		    if (computerSelection === "rock") { 
+            answer = "You WIN!!!";
+		    } else if (computerSelection === "scissors") {
+
+			answer = "Computer WINS!!!";
+		    } else {
+
+	      	 answer = "Its a tie";
+	        }
+
+        break;
+
+	    case "scissors": 
+
+		    if (computerSelection === "paper"){
+
+			answer = "You WIN!!!";
+
+		    }else if(computerSelection === "rock") {
+
+		    answer = "Computer WINS!!!";
+
+	        } else {
+
+	      	 answer = "Its a tie";
+	        }
+
+	    break;
+
+	    default:
+	    answer = "something went wrong";
+	};
+
+	 return answer;
+}; 
+
+
+let game = () => {
+    let playerScore = 0;
+    let computerScore = 0;
+    let rounds = 5;
+
+       for (let i = 0; i < rounds; i++) {
+
+       	let computerSelection = computerPlay();
+        let playerSelection = userPlay();
+            console.log(playRound(playerSelection, computerSelection));
+
+
+       	if (answer === "Computer WINS!!!"){
+
+       		computerScore ++;
+
+       		console.log(computerScore);
+       	} else if (answer === "You WIN!!!" ) {
+         
+       	     playerScore ++;	
+
+       		console.log(playerScore );
+       	} else {
+
+       		 console.log("You tied");
+       	}
+
+       	console.log(playerScore, computerScore);
+       
+       };
+
+       if (playerScore > computerScore){
+           
+           alert( "Give the player a medal");
+       } else if(playerScore < computerScore){
+
+       	   alert(" Give the Computer a medal");
+       }else{
+
+       		alert("Its a Tie, you both get a medal");
+       };
+  }; 
