@@ -1,206 +1,192 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-
+	 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 <style type="text/css">
-  
+
+
+ 
   body{
     margin: 0;
     padding: 0;
-    background-color: #0000ff;
     font-family: 'Press Start 2P', cursive; 
 
   }
-  header{
-    height:44px;
+
+  #wrapper{
+  width: 700px;
+  margin: auto;
 
   }
 
-  .block{
-    margin-right: -1px;
-  }
+#grid {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0;
+}
+#grid > div {
+  background-color: #0000ff;
+  color: white;
+  font-size: 4vw;
+  padding: 0;
+  max-width: 750px;
+}
+#grid > div:nth-child(1) {
+  grid-column: span 3;
+}
+#grid > div:nth-child(2) {
+  grid-row: span 4;
+}
 
-  .rockPillar{
-    width: 45px;
-    margin-left:-12px;
+#grid > div:nth-child(12) {
+  grid-column: span 4;
+} 
 
-  }
-.rockPillar2{
-    width: 45px;
-    margin-left:-1px;
-    position: relative;
-    left:544px;
-    top:-115px;
-
-  }
-
-  .ground{
+.ground{
     height: auto 0;
     max-width: 110%;
-    background-repeat: repeat-x; 
-    position: relative;
-    top: -115px;
-  }
+    margin: 0;
+    padding: 0;
+}
 
-  #text-box{
+#text-box{
     background-color: black;
     color: white;
     height: auto;
-    max-width: 60%;
-
-  }
-
-  .cloud{
-    margin: 10px;
+    max-width: 80%;
+    font-size: 20px;
 
   }
 
   #rock{
-  margin-right: 20px;
+  	margin-left:80px;
   }
 
   #paper{
-    margin-right: : 20px;
+  	margin-left:80px;
   }
 
   #scissors{
-    margin-right: : 20px;
+  	margin-left:80px;
+  }
+
+  #rock> img{
+  opacity: 1;
+  filter:alpha(opacity=100);
+  transition: opacity .25s ease-in-out; 
+  }
+   #rock> img:hover{
+   	transition: opacity .25s ease-in-out;
+  opacity: 0.5; 
+  }
+
+  #alex{
+  	position: relative;
+  	top: 53px;
+  	left: 80px;
+  }
+
+#parplin{
+	position: relative;
+	top:28px;
+	left: 136px;
+
+}
+
+  #cloud1{
+  	position: relative;
+  	top: 47px;
+  	left: 80px;
+
+  }
+
+  .block{
+  	margin:0;
+  	padding: 0;
+  	float: right;
+  }
+
+  #pillars{
+  	display: grid;
+  	grid-template-columns: 48px 48px 48px;
+  	grid-gap: -5px;
+  }
+
+  #pillars > div{
+  	padding: -10px; 
+  	margin: -2px;
+
   }
 
 </style>
+
+</head>
+
+
+<body>
     
-  </head>
-
-  <body>
-
-    <div class="container-fluid" >
-      <header>
-
-        <div class="container-fluid">
-          <div class="row float-right">
-            <img src="images/blocks.png" class="img-fluid float-right block" alt="block">
-            <img src="images/blocks.png" class="img-fluid float-right block" alt="block">
-            <img src="images/blocks.png" class="img-fluid float-right block" alt="block">
-          </div>
-        </div>
-        
-      </header>
-
-      <main>
-
-        <div class="container-fluid">
-           <div class="row">
-             <div class="col-8">
-              <div id="text-box">
+<div id="wrapper">
+	<div id="grid">
+    <div>
+  	<div id="text-box">
               <p>Alex The Kidd Jenkin match</p>
               </div>
-              <img src="images/cloud.png" class="img-fluid float-right cloud" alt="picture of a cloud">
-
-             </div> 
-
-             <div class="col-3">
-              <img src="images/cloud.png" class="img-fluid float-right cloud" alt="picture of a cloud">
-             </div> 
-
-           <div class="col-1 float-right">
-        
-            <div class="rockPillar">
-         
-              <img src="images/blocks.png" class="img-fluid float-right block" alt="block">
-         
-              <img src="images/blocks.png" class="img-fluid float-right block" alt="block">
-
-             <img src="images/blocks.png" class="img-fluid float-right block" alt="block">
-         
-             <img src="images/blocks.png" class="img-fluid float-right block" alt="block">
-
-             
-    
-             </div>
+     </div> 
           
-            </div>
+  <div>
+     <div id="pillars">
+     	<div><img src="images/blocks.png" class="block" alt="block"></div>
+     	<div><img src="images/blocks.png" class="block" alt="block"></div>
+     	<div>
+     		<img src="images/blocks.png" class="block" alt="block">
+     		<img src="images/blocks.png" class="block" alt="block">
+     		<img src="images/blocks.png" class="block" alt="block">
+     		<img src="images/blocks.png" class="block" alt="block">
+     		<img src="images/blocks.png" class="block" alt="block">
+     		<img src="images/blocks.png" class="block" alt="block">
+     		<img src="images/blocks.png" class="block" alt="block">
+     		<img src="images/blocks.png" class="block" alt="block">
+     		<img src="images/blocks.png" class="block" alt="block">
+     		<img src="images/blocks.png" class="block" alt="block">
+     		<img src="images/blocks.png" class="block" alt="block">
 
-          </div>
+     	</div>
+     	 
+     	  
+     </div>
+  </div>
+  <div><img src="images/cloud.png" class="cloud" alt="picture of a cloud"></div>
+  <div>
+  </div>
 
-          <div class="row">
-            
+  <div>
+  	<img src="images/cloud.png" class="cloud" id="cloud1" alt="picture of a cloud">
+  </div>
 
-                <div class="col-4">
-                <img src="images/rockBubble.png" class="img-fluid float-right cloud"  id="rock" alt="picture of a cloud">
-                </div>
-                <div class="col-3">
-                 <img src="images/paperBubble.png" class="img-fluid float-right" id="paper"  alt="picture of a cloud">
-                 </div>
-                 <div class="col-3">
-                <img src="images/scissorsBubble.png" class="img-fluid float-right" id="scissors" alt="picture of a cloud">
-                </div>
-              </div>
-               
-               <div class="row">
-              <div class="col-1">
-        
-            <div class="rockPillar2">
-         
-              <img src="images/blocks.png" class="img-fluid float-right block" alt="block">
-         
-              <img src="images/blocks.png" class="img-fluid float-right block" alt="block">
+  <div>
+     <img src="images/rockBubble.png" id="rock">
+  </div>
+  <div>
+  	<img src="images/paperBubble.png" id="paper">
+  </div>
+  <div>
+   <img src="images/scissorsBubble.png" id="scissors">
+  </div>
+  <div>
+  	<img src="images/alex-standing.png" id="alex">
+  </div>
+    <div></div>
+    <div><img src="images/parplin-standing.png" id="parplin"></div>
+  <div><img src="images/ground.png" class="ground" alt="block"></div>
+</div>
 
-             <img src="images/blocks.png" class="img-fluid float-right block" alt="block">
-         
-             <img src="images/blocks.png" class="img-fluid float-right block" alt="block">
+</div>
 
-             <img src="images/blocks.png" class="img-fluid float-right block" alt="block">
+	 
 
-             <img src="images/blocks.png" class="img-fluid float-right block" alt="block">
-         
-             <img src="images/blocks.png" class="img-fluid float-right block" alt="block">
-
-             <img src="images/blocks.png" class="img-fluid float-right block" alt="block">
-         
-             </div>
-
-             </div> 
-
-             </div>
- 
-
-        </div>
-
-      </main>
-      
-      <footer>
-
-
-        <div>
-          <img src="images/ground.png" class="img-fluid float-right ground " alt="block">
-        </div>
-
-      </footer>
-      
-
-
-    </div>
-
-
-    
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
-  </body>
-
+</body>
 </html>
