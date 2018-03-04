@@ -63,26 +63,85 @@
   }
 
   #rock{
-  	margin-left:80px;
+  	
+  	width: 93px;
+  	height: 96px;
+  	border-top: 0 solid #CCCCCC;
+    border-right: 0 solid #333333;
+    border-bottom: 0 solid #333333;
+    border-left: 0 solid #CCCCCC;
+
   }
 
   #paper{
-  	margin-left:80px;
+  
+  	width: 95px;
+  	height: 100px;
+  	border-top: 0 solid #CCCCCC;
+    border-right: 0px solid #333333;
+    border-bottom: 0px solid #333333;
+    border-left: 0px solid #CCCCCC;
+
   }
 
   #scissors{
-  	margin-left:80px;
+  	
+  	width: 93px;
+  	height: 96px;
+  	border-top: 0 solid #CCCCCC;
+    border-right: 0 solid #333333;
+    border-bottom: 0 solid #333333;
+    border-left: 0 solid #CCCCCC;
+
   }
 
-  #rock> img{
-  opacity: 1;
-  filter:alpha(opacity=100);
-  transition: opacity .25s ease-in-out; 
+  .button{
+  	
+  	margin:auto 0;
   }
-   #rock> img:hover{
-   	transition: opacity .25s ease-in-out;
-  opacity: 0.5; 
-  }
+
+  a:link {
+  	width: 93px;
+  	height: 96px;
+    color: green; 
+    background-color: green; 
+    text-decoration: none;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+
+}
+
+a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+	width: 96px;
+  	height: 98px;
+    color: red;
+    background-color: red;
+    text-decoration: underline;
+    border-top: 1px solid #BADA55;
+    border-right: 1px solid red;
+    border-bottom: 1px solid red;
+    border-left: 1px solid #BADA55;
+}
+
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.btn{
+	height: 95px;
+}
+
+
 
   #alex{
   	position: relative;
@@ -121,6 +180,10 @@
   	margin: -2px;
 
   }
+ 
+
+ 
+
 
 </style>
 
@@ -166,15 +229,19 @@
   <div>
   	<img src="images/cloud.png" class="cloud" id="cloud1" alt="picture of a cloud">
   </div>
+ 
+  <div>
+  	<div class="button">
+    <a href="#" class="btn"><img src="images/rockBubble.png" class="img-btn" id="rock"></a>
+    </div>
+  </div>
 
   <div>
-     <img src="images/rockBubble.png" id="rock">
+  	<a href="#" class="btn"> <img src="images/paperBubble.png" class="img-btn" id="paper"></a>
   </div>
+  
   <div>
-  	<img src="images/paperBubble.png" id="paper">
-  </div>
-  <div>
-   <img src="images/scissorsBubble.png" id="scissors">
+   <a href="#" class="btn"><img src="images/scissorsBubble.png" class="img-btn" id="scissors"></a>
   </div>
   <div>
   	<img src="images/alex-standing.png" id="alex">
