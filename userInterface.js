@@ -1,5 +1,6 @@
 let answer = ""
 
+const buttons = document.querySelectorAll('a');
 
 let computerPlay = () => {
 	let comPick = ["rock", "paper", "scissors"];
@@ -21,25 +22,25 @@ let playRound = (playerSelection, computerSelection) => {
     switch(playerSelection){
 	    case "rock" :
 		    if (computerSelection === "scissors"){
-			answer = "You WIN!!!";
+			answer = "Darn it i loose";
 		    } else if (computerSelection === "paper") {
-			answer = "Computer WINS!!!";
+			answer = "I win you got it";
 		    }else {
 
-	      	 answer = "Its a tie";
+	      	 answer = "It's a draw you sure lucked out";
 	        }
 	    break; 
 
 	    case "paper": 
 
 		    if (computerSelection === "rock") { 
-            answer = "You WIN!!!";
+            answer = "Darn it i loose";
 		    } else if (computerSelection === "scissors") {
 
-			answer = "Computer WINS!!!";
+			answer = "I win you got it";
 		    } else {
 
-	      	 answer = "Its a tie";
+	      	 answer = "It's a draw you sure lucked out";
 	        }
 
         break;
@@ -48,15 +49,15 @@ let playRound = (playerSelection, computerSelection) => {
 
 		    if (computerSelection === "paper"){
 
-			answer = "You WIN!!!";
+			answer = "Darn it i loose";
 
 		    }else if(computerSelection === "rock") {
 
-		    answer = "Computer WINS!!!";
+		    answer = "I win you got it";
 
 	        } else {
 
-	      	 answer = "Its a tie";
+	      	 answer = "It's a draw you sure lucked out";
 	        }
 
 	    break;
@@ -69,7 +70,7 @@ let playRound = (playerSelection, computerSelection) => {
 }; 
 
 
-let game = () => {
+/*let game = () => {
     let playerScore = 0;
     let computerScore = 0;
     let rounds = 5;
@@ -81,19 +82,19 @@ let game = () => {
             console.log(playRound(playerSelection, computerSelection));
 
 
-       	if (answer === "Computer WINS!!!"){
+       	if (answer === "I win you got it"){
 
        		computerScore ++;
 
        		console.log(computerScore);
-       	} else if (answer === "You WIN!!!" ) {
+       	} else if (answer === "Darn it i loose" ) {
          
        	     playerScore ++;	
 
        		console.log(playerScore );
        	} else {
 
-       		 console.log("You tied");
+       		 console.log("It's a draw you sure lucked out");
        	}
 
        	console.log(playerScore, computerScore);
@@ -102,12 +103,12 @@ let game = () => {
 
        if (playerScore > computerScore){
            
-           alert( "Give the player a medal");
+           alert( "Well it looks like thats the way its meant to be you win");
        } else if(playerScore < computerScore){
 
-       	   alert(" Give the Computer a medal");
+       	   alert(" You better accept the inevitable");
        }else{
 
-       		alert("Its a Tie, you both get a medal");
+       		alert("It's a draw you sure lucked out");
        };
-  }; 
+  }; */
