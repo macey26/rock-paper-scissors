@@ -113,7 +113,7 @@
 
   }
 
-  #rock{
+  #rockImg{
   	
   	width: 93px;
   	height: 96px;
@@ -124,7 +124,7 @@
 
   }
 
-  #paper{
+  #paperImg{
   
   	width: 95px;
   	height: 100px;
@@ -135,7 +135,7 @@
 
   }
 
-  #scissors{
+  #scissorsImg{
   	
   	width: 96px;
   	height: 100px;
@@ -245,13 +245,13 @@ a:active {
     
 <div id="wrapper">
 	<div id="grid">
-    <div>
+    <div class="item1">
   	<div id="text-box">
               <p>Alex The Kidd Jenkan match. You must choose either Rock, Paper or Scissors to play the game.</p>
               </div>
      </div> 
           
-  <div>
+  <div class="item2">
      <div id="pillars">
      	<div><img src="images/blocks.png" class="block" alt="block"></div>
      	<div><img src="images/blocks.png" class="block" alt="block"></div>
@@ -273,46 +273,47 @@ a:active {
      	  
      </div>
   </div>
-  <div><img src="images/cloud.png" class="cloud" alt="picture of a cloud"></div>
+
+  <div class="item3"><img src="images/cloud.png" class="cloud" alt="picture of a cloud"></div>
   <div>
   </div>
 
-  <div>
+  <div class="item4">
   	<img src="images/cloud.png" class="cloud" id="cloud1" alt="picture of a cloud">
   </div>
  
-  <div>
+  <div class="item5">
   	<div class="button" id="gridRock">
   	<div></div>	
-    <a href="#" class="btn"><img src="images/rockBubble.png" class="img-btn" id="rock"></a>
+    <a href="#" class="btn" id="rock"><img src="images/rockBubble.png" class="img-btn" id="rockImg"></a>
 
     </div>
   </div>
 
-  <div>
+  <div class="item6">
   	<div class="button" id="gridPaper">
   	<div></div>
-  	<a href="#" class="btn"> <img src="images/paperBubble.png" class="img-btn" id="paper"></a>
+  	<a href="#" class="btn" id="paper"> <img src="images/paperBubble.png" class="img-btn" id="paperImg"></a>
   </div>
   </div>
   
-  <div>
+  <div class="item7">
   	<div class="button" id="gridScissors">
   	<div></div>
-   <a href="#" class="btn"><img src="images/scissorsBubble.png" class="img-btn" id="scissors"></a>
+   <a href="#" class="btn" id="scissors"><img src="images/scissorsBubble.png" class="img-btn" id="scissorsImg"></a>
   </div>
 </div>
-  <div>
+  <div class="item8">
   	<img src="images/alex-standing.png" id="alex">
   </div>
-    <div></div>
-    <div><img src="images/parplin-standing.png" id="parplin"></div>
-  <div><img src="images/ground.png" class="ground" alt="block"></div>
+    <div class="item9"></div>
+    <div class="item10"><img src="images/parplin-standing.png" id="parplin"></div>
+  <div class="item11"><img src="images/ground.png" class="ground" alt="block"></div>
 </div>
 
 </div>
 
-	 <script type="text/javascript" src="userInterface.js">
+	 <script type="text/javascript" src="userInterface.js"></script>
 
 </body>
 </html>

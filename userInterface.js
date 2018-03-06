@@ -2,6 +2,16 @@ let answer = ""
 
 const buttons = document.querySelectorAll('a');
 
+buttons.forEach((a) => {
+ 
+   a.addEventListener('click', (e) => {
+     alert(a.id);
+     playRound();
+
+   });
+
+});
+
 let computerPlay = () => {
 	let comPick = ["rock", "paper", "scissors"];
 	let computer = comPick[Math.floor(Math.random() * comPick.length)];
