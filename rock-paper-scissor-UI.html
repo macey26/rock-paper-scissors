@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Alex the Kidd JenkAn</title>
+	<title>Alex the Kidd Jenkan</title>
 
 	 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 <style type="text/css">
@@ -13,6 +13,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Press Start 2P', cursive; 
+
 
   }
 
@@ -26,7 +27,7 @@
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 0;
+  grid-gap: 1px;
 
 }
 #grid > div {
@@ -48,53 +49,19 @@
   grid-column: span 4;
 } 
 
-#gridRock {
+.item {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 1px;
-
+  grid-template-columns: repeat(6, 1fr 2fr);
+  grid-gap: 3px;
 }
-#gridRock > div {
-  background-color: #0000ff;
+
+.item5 {
   color: white;
-  font-size: 4vw;
-  padding: 0;
-  max-width: 120px;
 
 }
 
-#gridPaper {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 1px;
 
-}
-#gridPaper > div {
-  background-color: #0000ff;
-  color: white;
-  font-size: 4vw;
-  padding: 0;
-  max-width: 120px;
-
-}
-
-#gridScissors {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 1px;
-
-}
-#gridScissors > div {
-  background-color: #0000ff;
-  color: white;
-  font-size: 4vw;
-  padding: 0;
-  max-width: 120px;
-
-}
 
 .ground{
     height: auto 0;
@@ -108,8 +75,9 @@
     color: white;
     height: auto;
     max-width: 80%;
-    font-size: 20px;
+    font-size: 18px;
     margin-left:25px;
+    padding: 5px;
 
   }
 
@@ -138,7 +106,7 @@
   #scissorsImg{
   	
   	width: 96px;
-  	height: 100px;
+  	height: 98px;
   	border-top: 0 solid #CCCCCC;
     border-right: 0 solid #333333;
     border-bottom: 0 solid #333333;
@@ -282,23 +250,23 @@ a:active {
   	<img src="images/cloud.png" class="cloud" id="cloud1" alt="picture of a cloud">
   </div>
  
-  <div class="item5">
-  	<div class="button" id="gridRock">
+  <div class="item item5">
+  	<div class="button">
   	<div></div>	
     <a href="#" class="btn" id="rock"><img src="images/rockBubble.png" class="img-btn" id="rockImg"></a>
 
     </div>
   </div>
 
-  <div class="item6">
-  	<div class="button" id="gridPaper">
+  <div class=" item item6">
+  	<div class="button">
   	<div></div>
   	<a href="#" class="btn" id="paper"> <img src="images/paperBubble.png" class="img-btn" id="paperImg"></a>
   </div>
   </div>
   
-  <div class="item7">
-  	<div class="button" id="gridScissors">
+  <div class="item item7">
+  	<div class="button">
   	<div></div>
    <a href="#" class="btn" id="scissors"><img src="images/scissorsBubble.png" class="img-btn" id="scissorsImg"></a>
   </div>

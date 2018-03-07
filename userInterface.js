@@ -5,7 +5,8 @@ const buttons = document.querySelectorAll('a');
 buttons.forEach((a) => {
  
    a.addEventListener('click', (e) => {
-     alert(a.id);
+     player = a.id;
+     console.log(a.id);
      playRound();
 
    });
@@ -20,7 +21,7 @@ let computerPlay = () => {
 	
 	 
 let userPlay = () => {
-	let player = prompt("please enter your choice of rock paper scissors").toLowerCase();
+	let player = buttons.id;
 	return player;
 };
 
