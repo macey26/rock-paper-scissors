@@ -27,7 +27,7 @@
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1px;
+  grid-gap: 0;
 
 }
 #grid > div {
@@ -45,20 +45,26 @@
   grid-row: span 4;
 }
 
-#grid > div:nth-child(12) {
+#grid > div:nth-child(10) {
   grid-column: span 4;
 } 
+#grid > div:nth-child(6) {
+  grid-column: span 3;
+} 
 
-.item {
+.container{
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: repeat(6, 1fr 2fr);
-  grid-gap: 3px;
+  grid-gap: 2px;
+  grid-template-columns:  60px 100px 75px 100px 75px 100px;
 }
 
-.item5 {
+.item {
   color: white;
+  padding:0;
+}
 
+.item2{
+  padding-right: 20px;
 }
 
 
@@ -73,11 +79,12 @@
 #text-box{
     background-color: black;
     color: white;
-    height: auto;
-    max-width: 80%;
+    height: 98%;
+    max-width: 95%;
     font-size: 18px;
+    line-height: 25px;
     margin-left:25px;
-    padding: 5px;
+    padding: 5px 5px 5px 20px;
 
   }
 
@@ -114,10 +121,7 @@
 
   }
 
-  .button{
-  	
-  	margin:auto 0;
-  }
+  
 
   a:link {
   	width: 93px;
@@ -164,13 +168,13 @@ a:active {
 
   #alex{
   	position: relative;
-  	top: 53px;
+  	top: 75px;
   	left: 80px;
   }
 
 #parplin{
 	position: relative;
-	top:28px;
+	top:52px;
 	left: 136px;
 
 }
@@ -213,13 +217,13 @@ a:active {
     
 <div id="wrapper">
 	<div id="grid">
-    <div class="item1">
+    <div >
   	<div id="text-box">
-              <p>Alex The Kidd Jenkan match. You must choose either Rock, Paper or Scissors to play the game.</p>
+              <p>Alex The Kidd Jenkan You must choose Rock Paper or Scissors to play</p>
               </div>
      </div> 
           
-  <div class="item2">
+  <div>
      <div id="pillars">
      	<div><img src="images/blocks.png" class="block" alt="block"></div>
      	<div><img src="images/blocks.png" class="block" alt="block"></div>
@@ -235,6 +239,9 @@ a:active {
      		<img src="images/blocks.png" class="block" alt="block">
      		<img src="images/blocks.png" class="block" alt="block">
      		<img src="images/blocks.png" class="block" alt="block">
+          <img src="images/blocks.png" class="block" alt="block">
+            <img src="images/blocks.png" class="block" alt="block">
+           
 
      	</div>
      	 
@@ -242,41 +249,40 @@ a:active {
      </div>
   </div>
 
-  <div class="item3"><img src="images/cloud.png" class="cloud" alt="picture of a cloud"></div>
+  <div ><img src="images/cloud.png" class="cloud" alt="picture of a cloud"></div>
   <div>
   </div>
 
-  <div class="item4">
+  <div >
   	<img src="images/cloud.png" class="cloud" id="cloud1" alt="picture of a cloud">
   </div>
  
-  <div class="item item5">
-  	<div class="button">
-  	<div></div>	
-    <a href="#" class="btn" id="rock"><img src="images/rockBubble.png" class="img-btn" id="rockImg"></a>
+ 
 
-    </div>
-  </div>
-
-  <div class=" item item6">
-  	<div class="button">
-  	<div></div>
-  	<a href="#" class="btn" id="paper"> <img src="images/paperBubble.png" class="img-btn" id="paperImg"></a>
-  </div>
-  </div>
   
-  <div class="item item7">
-  	<div class="button">
-  	<div></div>
-   <a href="#" class="btn" id="scissors"><img src="images/scissorsBubble.png" class="img-btn" id="scissorsImg"></a>
+ <div class="container"> 
+      <div class="item item1"></div>
+
+      <div class="item item2"><a href="#" class="btn" id="rock"><img src="images/rockBubble.png" class="img-btn" id="rockImg"></a> </div>
+
+  	  <div class="item item3"></div>
+
+      <div class="item item4"><a href="#" class="btn" id="paper"> <img src="images/paperBubble.png" class="img-btn" id="paperImg"></a></div>
+
+      <div class="item item5"></div>
+
+      <div class="item item6"><a href="#" class="btn" id="scissors"><img src="images/scissorsBubble.png" class="img-btn" id="scissorsImg"></a></div>
+    
   </div>
-</div>
-  <div class="item8">
+
+
+  <div >
   	<img src="images/alex-standing.png" id="alex">
   </div>
-    <div class="item9"></div>
-    <div class="item10"><img src="images/parplin-standing.png" id="parplin"></div>
-  <div class="item11"><img src="images/ground.png" class="ground" alt="block"></div>
+    <div ></div>
+    <div ><img src="images/parplin-standing.png" id="parplin"></div>
+
+  <div><img src="images/ground.png" class="ground" alt="block"></div>
 </div>
 
 </div>
@@ -285,3 +291,4 @@ a:active {
 
 </body>
 </html>
+
