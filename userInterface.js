@@ -1,15 +1,22 @@
-let answer = ""
+const answers = document.querySelector('#textBox');
+const answer = ""
 
+
+const textBox = document.querySelector('#textBox');
+const displayText = document.createElement('div');
+displayText.classList.add('displayText')
+textBox.textContent = 'Alex the Kidd Jenkan You must choose rock paper or scissors to play';
+textBox.setAttribute('style', 'background: black; color: white; fontSize: 18px; margin:20px; padding: 2px -2px 2px 20px');
 const buttons = document.querySelectorAll('a');
 
 buttons.forEach((a) => {
  
    a.addEventListener('click', (e) => {
-     player = a.id;
      console.log(a.id);
-     playRound();
-
-   });
+     let computerSelection = computerPlay();
+        let playerSelection = a.id;
+            textBox.textContent = playRound(playerSelection, computerSelection);
+    });
 
 });
 
@@ -20,10 +27,10 @@ let computerPlay = () => {
 };
 	
 	 
-let userPlay = () => {
-	let player = buttons.id;
+/*let userPlay = () => {
+	let player = console.log(buttons.id);
 	return player;
-};
+};*/
 
 let playRound = (playerSelection, computerSelection) => {
 
@@ -81,7 +88,10 @@ let playRound = (playerSelection, computerSelection) => {
 }; 
 
 
-/*let game = () => {
+textBox.appendChild(displayText);
+
+/*
+let game = () => {
     let playerScore = 0;
     let computerScore = 0;
     let rounds = 5;
