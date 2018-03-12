@@ -1,11 +1,7 @@
-const answers = document.querySelector('#textBox');
-const answer = ""
-
 
 const textBox = document.querySelector('#textBox');
 const displayText = document.createElement('div');
-displayText.classList.add('displayText')
-textBox.textContent = 'Alex the Kidd Jenkan You must choose rock paper or scissors to play';
+displayText.classList.add('displayText');
 textBox.setAttribute('style', 'background: black; color: white; fontSize: 18px; margin:20px; padding: 2px -2px 2px 20px');
 const buttons = document.querySelectorAll('a');
 
@@ -15,10 +11,17 @@ buttons.forEach((a) => {
      console.log(a.id);
      let computerSelection = computerPlay();
         let playerSelection = a.id;
-            textBox.textContent = playRound(playerSelection, computerSelection);
+            displayText.textContent = playRound(playerSelection, computerSelection);
     });
 
 });
+
+/*const divAnswer = document.querySelector('#answer');
+const answers = document.createElement('div');
+answers.classList.add('answers');
+answers.textContent = 'dfff';
+//answers.textContent = playRound(playerSelection, computerSelection);
+*/
 
 let computerPlay = () => {
 	let comPick = ["rock", "paper", "scissors"];
