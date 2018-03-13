@@ -2,7 +2,8 @@
 const textBox = document.querySelector('#textBox');
 const displayText = document.createElement('div');
 displayText.classList.add('displayText');
-textBox.setAttribute('style', 'background: black; color: white; fontSize: 18px; margin:20px; padding: 2px -2px 2px 20px');
+textBox.setAttribute('style', 'background: black; color: white; fontSize: 18px; margin:20px; padding: 2px -2px 2px 20px;');
+displayText.textContent = 'Alex the Kidd Jenkan You must choose rock paper or scissors to play'; 
 const buttons = document.querySelectorAll('a');
 
 buttons.forEach((a) => {
@@ -16,12 +17,16 @@ buttons.forEach((a) => {
 
 });
 
-/*const divAnswer = document.querySelector('#answer');
-const answers = document.createElement('div');
-answers.classList.add('answers');
-answers.textContent = 'dfff';
-//answers.textContent = playRound(playerSelection, computerSelection);
-*/
+const alexDiv = document.querySelector('#alexDiv');
+const alexScore = document.createElement('div');
+alexScore.classList.add('alexScore');
+alexScore.setAttribute('style', 'max-width: 90%; background: black; color: white; position: relative; top: -52px; marginRight: -12px' );
+
+const parplinDiv = document.querySelector('#parplinDiv');
+const parplinScore = document.createElement('div');
+parplinScore.classList.add('parplinScore');
+parplinScore.setAttribute('style', 'max-width: 90%; background: black; color: white; position: relative; top: -72px; marginRight: -12px' );
+
 
 let computerPlay = () => {
 	let comPick = ["rock", "paper", "scissors"];
@@ -36,9 +41,10 @@ let computerPlay = () => {
 };*/
 
 let playRound = (playerSelection, computerSelection) => {
+ 
 
-    console.log("Player chose " + playerSelection);
-	console.log("Computer chose " + computerSelection);
+    alexScore.textContent = playerSelection;
+	parplinScore.textContent = computerSelection;
 	
     switch(playerSelection){
 	    case "rock" :
@@ -92,7 +98,8 @@ let playRound = (playerSelection, computerSelection) => {
 
 
 textBox.appendChild(displayText);
-
+alexDiv.appendChild(alexScore);
+parplinDiv.appendChild(parplinScore);
 /*
 let game = () => {
     let playerScore = 0;

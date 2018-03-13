@@ -14,6 +14,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Press Start 2P', cursive; 
+    font-size: 60%;
 
 
   }
@@ -28,7 +29,7 @@
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 0;
+  grid-gap: 1px;
 
 }
 #grid > div {
@@ -41,6 +42,8 @@
 }
 #grid > div:nth-child(1) {
   grid-column: span 3;
+  grid-row: span 1;
+
 }
 #grid > div:nth-child(2) {
   grid-row: span 4;
@@ -71,7 +74,7 @@
 
 
 .ground{
-    height: auto 0;
+    max-height: auto 0;
     max-width: 110%;
     margin: 0;
     padding: 0;
@@ -80,11 +83,12 @@
 #textBox{
     background-color: black;
     color: white;
-    max-height: 95%;
+    max-height: 80%;
     max-width: 95%;
     font-size: 16px;
     line-height: 25px;
     margin-left:25px;
+    z-index: 1;
     
 
   }
@@ -202,6 +206,18 @@ a:active {
   	margin: -2px;
 
   }
+
+  .cloud{
+    z-index: 5;
+  }
+
+  #alexDiv{
+    font-size: 12px;
+  }
+
+   #ParplinDiv{
+    font-size: 12px;
+  }
  
 
  
@@ -218,9 +234,12 @@ a:active {
 	<div id="grid">
     <div>
   	<div id="textBox">
-      <p>Alex the Kidd Jenkan You must choose rock paper or scissors to play</p>
-              
+      
               </div>
+
+           
+
+
      </div> 
           
   <div>
@@ -276,11 +295,18 @@ a:active {
   </div>
 
 
-  <div >
+  <div id="alexDiv" >
+
   	<img src="images/alex-standing.png" id="alex">
   </div>
+
     <div ></div>
-    <div ><img src="images/parplin-standing.png" id="parplin"></div>
+
+    <div id="parplinDiv" >
+
+      <img src="images/parplin-standing.png" id="parplin">
+
+    </div>
 
   <div><img src="images/ground.png" class="ground" alt="block"></div>
 </div>
