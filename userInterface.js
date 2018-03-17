@@ -23,11 +23,14 @@ let playRound = (playerSelection, computerSelection) => {
 	    case "rock" :
 		    if (computerSelection === "scissors"){
 			answer = "Darn it i loose";
+			alexRock.src = "images/alexRock.png";
 		    } else if (computerSelection === "paper") {
 			answer = "I win you got it";
+			alexRock.src = "images/alexRock.png";
 		    }else {
 
 	      	 answer = "It's a draw you sure lucked out";
+	      	 alexRock.src = "images/alexRock.png";
 	        }
 	    break; 
 
@@ -76,6 +79,8 @@ let game = () => {
     let playerScore = 0;
     let computerScore = 0;
 
+
+
     const textBox = document.querySelector('#textBox');
     const alexDiv = document.querySelector('#alexDiv');
     const parplinDiv = document.querySelector('#parplinDiv');
@@ -83,16 +88,26 @@ let game = () => {
 
 const displayText = document.createElement('div');
 displayText.classList.add('displayText');
-textBox.setAttribute('style', 'background: black; color: white; fontSize: 18px; margin:20px; padding: 2px -2px 2px 20px;');
+textBox.setAttribute('style', 'background: black; color:white; fontSize: 18px; margin:20px; padding: 2px -2px 2px 20px;');
 displayText.textContent = 'Alex the Kidd Jenkan You must choose rock paper or scissors to play'; 
 
 const alexScore = document.createElement('div');
 alexScore.classList.add('alexScore');
-alexScore.setAttribute('style', 'max-width: 90%; background: black; color: white; position: relative; top: -52px; marginRight: -12px; ' );
+alexScore.setAttribute('style', 'max-width: 90%; color: black; position: relative; top: -52px; left: 90px; ' );
 
 const parplinScore = document.createElement('div');
 parplinScore.classList.add('parplinScore');
-parplinScore.setAttribute('style', 'max-width: 90%; background: black; color: white; position: relative; top: -72px; marginRight: -12px;' );
+parplinScore.setAttribute('style', 'max-width: 90%;color: black; fontSize: 25% ;position: relative; top: -72px; left: 130px;' );
+
+const alexStand = document.createElement('img');
+alexStand.classList.add("alexStand");
+alexStand.setAttribute('style', 'margin: 75px 0 0 80px;' );
+//alexStand.src = "images/alex-standing.png";
+
+const alexRock = document.createElement('img');
+alexRock.classList.add("alexRock");
+//alexRock.src = "images/alexRock.png";
+
 
 
 
@@ -103,25 +118,28 @@ buttons.forEach((a) => {
    a.addEventListener('click', (e) => {
      console.log(a.id);
      let computerSelection = computerPlay();
-        let playerSelection = a.id;
+        let playerSelection = a.id; 
+        
+
+       
             displayText.textContent = playRound(playerSelection, computerSelection);
             
             if (answer === "I win you got it"){
 
        		computerScore ++;
 
-       		parplinScore.textContent = "o"
-       		alexScore.textContent = "x"
+       		parplinScore.textContent = computerScore;
+       		alexScore.textContent = playerScore;
 
        	} else if (answer === "Darn it i loose" ) {
          
        	     playerScore ++;	
 
-       		parplinScore.textContent = "x"
-       		alexScore.textContent = "o"
+       		parplinScore.textContent =  computerScore;
+       		alexScore.textContent = playerScore;
        	} else {
 
-       		 displayText.textContent = "It's a draw you sure lucked out");
+       		 displayText.textContent = "It's a draw you sure lucked out";
        	}
        
        
@@ -145,6 +163,8 @@ buttons.forEach((a) => {
 textBox.appendChild(displayText);
 alexDiv.appendChild(alexScore);
 parplinDiv.appendChild(parplinScore);
+alexDiv.appendChild(alexRock);
+alexDiv.appendChild(alexStand);
   	
   }; 
 
