@@ -14,6 +14,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Press Start 2P', cursive;
+    font-size: 15px !important;
   }
 
   #wrapper{
@@ -83,7 +84,7 @@
     color: white;
     max-height: 80%;
     max-width: 95%;
-    font-size: 16px !important;
+    font-size: 16px ;
     line-height: 25px;
     margin-left:25px;
     z-index: 1;
@@ -210,21 +211,24 @@ a:active {
   }
 
   #alexDiv{
-    font-size: 15px !important;
-    border: solid 3px white;
-    position:relative;
-    top:0px;
-    left: 20px;
     
-
-
+    background-color: #0000ff;
+    position:relative;
+    font-size: 15px;
+    
   }
 
    #ParplinDiv{
-    font-size: 15px !important;
+    
   }
  
+#alexScoreBoard{
+  font-size: 18px !important;
+}
 
+#parplinScoreBoard{
+  font-size: 18px !important;
+}
  
 
 
@@ -273,13 +277,14 @@ a:active {
      </div>
   </div>
 
-  <div ><img src="images/cloud.png" class="cloud" alt="picture of a cloud"></div>
+  <div id="alexScoreBoard" ><img src="images/cloud.png" class="cloud" alt="picture of a cloud"></div>
   <div>
+    <img src="images/cloud.png" class="cloud" id="cloud1" alt="picture of a cloud">
+
   </div>
 
-  <div >
-  	<img src="images/cloud.png" class="cloud" id="cloud1" alt="picture of a cloud">
-  </div>
+  <div id="parplinScoreBoard">
+  	  </div>
  
  
 
@@ -309,7 +314,7 @@ a:active {
 
     <div id="parplinDiv" >
 
-      <img src="images/parplin-standing.png" id="parplin">
+     <!-- <img src="images/parplin-standing.png" id="parplin"> -->
 
     </div>
 
