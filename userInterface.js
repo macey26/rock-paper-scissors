@@ -27,7 +27,7 @@ alexStand.setAttribute('style', 'margin: 73px 0 0 5px;');
 
 const alexRock = document.createElement('img');
 alexRock.classList.add("alexRock");
-alexRock.setAttribute('style', "margin: 50px 0 0 0;");
+alexRock.setAttribute('style', "margin: 73px 0 0 55px;");
 
 const alexPaper = document.createElement('img');
 alexPaper.classList.add("alexPaper");
@@ -41,10 +41,17 @@ const parplinStand =document.createElement('img');
 parplinStand.classList.add('parplinStand');
 parplinStand.setAttribute('style', 'margin: 50px 0 0 145px;');
 
-
 const parplinRock = document.createElement('img');
 parplinRock.classList.add("parplinRock");
 parplinRock.setAttribute('style', "margin: 0 0 0 80px;");
+
+const parplinPaper = document.createElement('img');
+parplinPaper.classList.add("img");
+parplinPaper.setAttribute('style', "margin:0 0 0 70px;");
+
+const parplinScissors = document.createElement('img');
+parplinScissors.classList.add("parplinScissors");
+parplinScissors.setAttribute("style", "margin:0 0 0 85px");
 
 let computerPlay = () => {
 	let comPick = ["rock", "paper", "scissors"];
@@ -78,16 +85,18 @@ let playRound = (playerSelection, computerSelection) => {
 		    if (computerSelection === "scissors"){
 			answer = "Darn it i loose";
 			alexRock.src = "images/alexRock.png";
+			parplinScissors.src = "images/parplinScissors.png";
 			
 		    } else if (computerSelection === "paper") {
 			answer = "I win you got it";
 			alexRock.src = "images/alexRock.png";
+			//parplinPaper.src = "images/parplinPaper.png";
 			
 		    }else {
 
 	      	 answer = "It's a draw you sure lucked out";
 	      	 alexRock.src = "images/alexRock.png";
-	      	 parplinRock.src = "images/parplinRock.png";
+	      	 //parplinRock.src = "images/parplinRock.png";
 	     
 	        }
 	    break; 
@@ -96,16 +105,18 @@ let playRound = (playerSelection, computerSelection) => {
 
 		    if (computerSelection === "rock") { 
             answer = "Darn it i loose";
-            //alexPaper.src = "images/alexPaper.png"
-            parplinRock.src = "images/parplinRock.png";
+            alexPaper.src = "images/alexPaper.png"
+            //parplinRock.src = "images/parplinRock.png";
 		    } else if (computerSelection === "scissors") {
 
 			answer = "I win you got it";
-			//alexPaper.src = "images/alexPaper.png"
+			alexPaper.src = "images/alexPaper.png"
+			parplinScissors.src = "images/parplinScissors.png";
 		    } else {
 
 	      	 answer = "It's a draw you sure lucked out";
-	      	 //alexPaper.src = "images/alexPaper.png"
+	      	 alexPaper.src = "images/alexPaper.png";
+	      	 //parplinPaper.src = "images/parplinPaper.png";
 	        }
 
         break;
@@ -115,17 +126,19 @@ let playRound = (playerSelection, computerSelection) => {
 		    if (computerSelection === "paper"){
 
 			answer = "Darn it i loose";
-			//alexScissors.src = "images/alexScissors.png";
+			alexScissors.src = "images/alexScissors.png";
+			//parplinPaper.src = "images/parplinPaper.png";
 
 		    }else if(computerSelection === "rock") {
 
 		    answer = "I win you got it";
-		    //alexScissors.src = "images/alexScissors.png";
-             parplinRock.src = "images/parplinRock.png";
+		    alexScissors.src = "images/alexScissors.png";
+             //parplinRock.src = "images/parplinRock.png";
 	        } else {
 
 	      	 answer = "It's a draw you sure lucked out";
-	      	 //alexScissors.src = "images/alexScissors.png";
+	      	 alexScissors.src = "images/alexScissors.png";
+	      	 parplinScissors.src = "images/parplinScissors.png";
 	        }
 
 	    break;
@@ -156,6 +169,7 @@ buttons.forEach((a) => {
        
            displayText.textContent = playRound(playerSelection, computerSelection);
 
+          
               
             if (answer === "I win you got it"){
 
@@ -163,6 +177,7 @@ buttons.forEach((a) => {
 
        		parplinScore.textContent = computerScore;
        		alexScore.textContent = playerScore;
+           }
 
        	} else if (answer === "Darn it i loose" ) {
          
@@ -204,6 +219,8 @@ alexDiv.appendChild(alexPaper);
 alexDiv.appendChild(alexScissors);
 parplinDiv.appendChild(parplinStand);
 parplinDiv.appendChild(parplinRock);
+parplinDiv.appendChild(parplinPaper);
+parplinDiv.appendChild(parplinScissors);
 
   game();
 
