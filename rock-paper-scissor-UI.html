@@ -15,71 +15,69 @@
     padding: 0;
     font-family: 'Press Start 2P', cursive;
     font-size: 15px !important;
-  }
+    }
 
   #wrapper{
-  width: 700px;
-  height: 200px;
-  margin: auto;
+    width: 700px;
+    height: 200px;
+    margin: auto;
+
+    }
+
+  #grid {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0;
 
   }
+  #grid > div {
+    background-color: #0000ff;
+    color: white;
+    font-size: 4vw;
+    padding: 0;
+    max-width: 750px;
 
-#grid {
-  display: grid;
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 0;
+  }
+  #grid > div:nth-child(1) {
+    grid-column: span 3;
+    grid-row: span 1;
 
-}
-#grid > div {
-  background-color: #0000ff;
-  color: white;
-  font-size: 4vw;
-  padding: 0;
-  max-width: 750px;
+  }
+  #grid > div:nth-child(2) {
+    grid-row: span 4;
+  }
 
-}
-#grid > div:nth-child(1) {
-  grid-column: span 3;
-  grid-row: span 1;
+  #grid > div:nth-child(10) {
+    grid-column: span 4;
+  } 
+  #grid > div:nth-child(6) {
+    grid-column: span 3;
+  } 
 
-}
-#grid > div:nth-child(2) {
-  grid-row: span 4;
-}
+  .container{
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: 70px 100px 75px 100px 75px 100px;
+  }
 
-#grid > div:nth-child(10) {
-  grid-column: span 4;
-} 
-#grid > div:nth-child(6) {
-  grid-column: span 3;
-} 
+  .item {
+    color: white;
+    padding:0;
+  }
 
-.container{
-  display: grid;
-  grid-gap: 2px;
-  grid-template-columns: 70px 100px 75px 100px 75px 100px;
-}
+  .item2{
+    margin-right: 40px;
+  }
 
-.item {
-  color: white;
-  padding:0;
-}
-
-.item2{
-  margin-right: 40px;
-}
-
-
-
-.ground{
+  .ground{
     max-height: auto 0;
     max-width: 110%;
     margin: 0;
     padding: 0;
-}
+  }
 
-#textBox{
+  #textBox{
     background-color: black;
     color: white;
     max-height: 80%;
@@ -88,15 +86,12 @@
     line-height: 25px;
     margin-left:25px;
     z-index: 1;
-    
-
   }
 
   #rockImg{
-  	
-  	width: 95px;
-  	height: 95px;
-    margin: 0 0 0 -1px;
+  	width: 100px;
+  	height: 94px;
+    margin: 0 ;
   	border-top: 1px solid #CCCCCC;
     border-right: 1px  solid #333333;
     border-bottom: 1px  solid #333333;
@@ -105,12 +100,11 @@
   }
 
   #rock{
-   width: 96px;
+    width: 96px;
 
   }
 
   #paperImg{
-  
   	width: 99px;
   	height: 92px;
   	border-top: 1px  solid #CCCCCC;
@@ -121,7 +115,6 @@
   }
 
   #scissorsImg{
-  	
   	width: 98px;
   	height: 91px;
   	border-top: 1px solid #CCCCCC;
@@ -131,10 +124,7 @@
 
   }
 
-  
-
   a:link {
-  
     color: green; 
     background-color: green; 
     text-decoration: none;
@@ -143,16 +133,15 @@
     border-bottom: 1px solid #333333;
     border-left: 1px solid #CCCCCC;
 
-}
+  }
 
-a:visited {
+  a:visited {
     color: pink;
     background-color: transparent;
     text-decoration: none;
-}
+  }
 
-a:hover {
-	
+  a:hover {
     color: red;
     background-color: red;
     text-decoration: underline;
@@ -160,19 +149,17 @@ a:hover {
     border-right: 2px solid red;
     border-bottom: 2px solid red;
     border-left: 2px solid #BADA55;
-}
+    }
 
-a:active {
+  a:active {
     color: yellow;
     background-color: transparent;
     text-decoration: underline;
-}
+  }
 
-.btn{
-	height: 95px;
-}
-
-
+  .btn{
+	  height: 95px;
+  }
 
   #alex{
   	position: relative;
@@ -180,12 +167,12 @@ a:active {
   	left: 80px;
   }
 
-#parplin{
-	position: relative;
-	top:52px;
-	left: 136px;
+  #parplin{
+	  position: relative;
+	  top:52px;
+	  left: 136px;
 
-}
+  }
 
   #cloud1{
   	position: relative;
@@ -223,21 +210,15 @@ a:active {
     font-size: 15px;
     
   }
+ 
+  #alexScoreBoard{
+  font-size: 18px !important;
+  }
 
-   #ParplinDiv{
-    
+  #parplinScoreBoard{
+  font-size: 18px !important;
   }
  
-#alexScoreBoard{
-  font-size: 18px !important;
-}
-
-#parplinScoreBoard{
-  font-size: 18px !important;
-}
- 
-
-
 </style>
 
 </head>
@@ -251,9 +232,6 @@ a:active {
   	<div id="textBox">
       
               </div>
-
-           
-
 
      </div> 
           
@@ -313,6 +291,9 @@ a:active {
 
   <div id="alexDiv" >
 
+  
+    
+
   	
   </div>
 
@@ -320,7 +301,11 @@ a:active {
 
     <div id="parplinDiv" >
 
-     <!-- <img src="images/parplin-standing.png" id="parplin"> -->
+     <!--<img src="images/parplinStanding.png" id="parplinStand"> 
+     <img src="images/parplinRock.png" id="parplinRock">
+     <img src="images/parplinPaper.png" id="parplinPaper">
+     <img src="images/parplinScissors.png" id="parplinScissors"> -->
+
 
     </div>
 
