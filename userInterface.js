@@ -4,11 +4,10 @@ const alexDiv = document.querySelector('#alexDiv');
 const parplinDiv = document.querySelector('#parplinDiv');
 const alexScoreBoard = document.querySelector('#alexScoreBoard');
 const parplinScoreBoard = document.querySelector('#parplinScoreBoard');
-//
 
 const displayText = document.createElement('div');
 displayText.classList.add('displayText');
-textBox.setAttribute('style', 'background: black; color:white; fontSize: 18px; margin:20px; padding: 2px -2px 2px 20px;');
+textBox.setAttribute('style', 'background: black; color:white; fontSize: 16px; margin: 15px -10px -10px 15px; padding: 20px -2px 2px 20px; maxHeight: 55%;');
 displayText.textContent = 'Alex the Kidd Jenkan You must choose "Rock", "Paper" or "Scissors" to play'; 
 
 const alexScore = document.createElement('div');
@@ -22,7 +21,7 @@ parplinScore.setAttribute('style', 'max-width: 90%;color: black; fontSize: 16px;
 
 const alexStand = document.createElement('img');
 alexStand.classList.add("alexStand");
-alexStand.setAttribute('style', 'display: block;  position: relative; top:15px; left: 80px;');
+alexStand.setAttribute('style', 'display: block;  position: relative; top:44px; left: 83px;');
 alexStand.src = "images/alex-standing.png";
 
 const alexRock = document.createElement('img');
@@ -39,7 +38,7 @@ alexScissors.classList.add("alexScissors");
 
 const parplinStand =document.createElement('img');
 parplinStand.classList.add('parplinStand');
-parplinStand.setAttribute('style', 'position:relative; top:30px; left: 140px;');
+parplinStand.setAttribute('style', 'position:relative; top:65px; left: 140px;');
 parplinStand.src = "images/parplinStanding.png";
 
 
@@ -252,6 +251,7 @@ let playRound = (playerSelection, computerSelection) => {
 let game = () => {
     let playerScore = 0;
     let computerScore = 0;
+    let rounds = 0;
 
 const buttons = document.querySelectorAll('a');
 
@@ -267,6 +267,7 @@ buttons.forEach((a) => {
             if (answer === "I win you got it"){
 
        		computerScore ++;
+       		rounds ++;
 
        		parplinScore.textContent = computerScore;
        		alexScore.textContent = playerScore;
@@ -274,26 +275,36 @@ buttons.forEach((a) => {
 
        	else if (answer === "Darn it i loose"){
          
-       	     playerScore ++;	
+       	     playerScore ++;
+       	     rounds ++;	
 
        		parplinScore.textContent =  computerScore;
        		alexScore.textContent = playerScore;
        	} else {
 
+       			rounds ++;
+
        		 displayText.textContent = "It's a draw you sure lucked out";
        	}
        
-       
+       console.log(rounds);
 
-       if (playerScore >= 5){
-           
+       if (rounds == 5){
+
+          if(playerScore < computerScore){   
            displayText.textContent = "Well it looks like thats the way its meant to be you win";
-       } else if(computerScore >= 5){
+           }
+
+           if(playerScore > computerScore){
 
        	   displayText.textContent = " You better accept the inevitable";
-       }else{
+           }
 
-       		displayText.textContent = "It's a draw you sure lucked out";
+           if(playerScore == computerScore){ 
+
+       		displayText.textContent = "It's a draw you sure lucked out*";
+
+       	   }
        };
 
     });
