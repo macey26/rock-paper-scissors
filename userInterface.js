@@ -8,8 +8,8 @@ const parplinScoreBoard = document.querySelector('#parplinScoreBoard');
 
 const displayText = document.createElement('div');
 displayText.classList.add('displayText');
-textBox.setAttribute('style', 'background: black; color:white; fontSize: 16px; margin: 15px -10px -10px 15px; padding: 20px -2px 2px 20px; maxHeight: 55%;');
-textBox.textContent = 'Alex the Kidd Jenken, You must choose "Rock", "Paper" or "Scissors" to play'; 
+displayText.setAttribute('style', 'background: black; color:white; fontSize: 16px; margin: 15px -10px -10px 15px; padding: 20px -2px 2px 20px; maxHeight: 55%;');
+displayText.textContent = 'Alex the Kidd Jenken, You must choose "Rock", "Paper" or "Scissors" to play'; 
 
 const alexScore = document.createElement('div');
 alexScore.classList.add('alexScore');
@@ -20,10 +20,10 @@ parplinScore.classList.add('parplinScore');
 parplinScore.setAttribute('style', 'max-width: 90%;color: black; fontSize: 16px; position: relative; top: 100px; left: 130px;' );
 
 
-const alexStand = document.querySelector('alexStand');
+const alexStand = document.querySelector('#alexStand');
 
 
-const parplinStand =document.querySelector('alexStand');
+const parplinStand =document.querySelector('#parplinStand');
 
 
 const alexRock = document.createElement('img');
@@ -73,7 +73,7 @@ let playRound = (playerSelection, computerSelection) => {
 
 			answer = "Darn it i loose";
 
-				alexRock.setAttribute('style', 'display: block;  position: relative; top:70px; left: 80px;');
+				alexRock.setAttribute('style', 'display: block;  position: relative; top:75px; left: 80px;');
 				alexPaper.setAttribute('style', 'display: none;  ');
 				alexScissors.setAttribute('style', 'display: none;  ');
 				alexStand.setAttribute('style', 'display: none;  ');
@@ -312,7 +312,7 @@ buttons.forEach((a) => {
 
            if(playerScore == computerScore){ 
 
-       		displayText.textContent = "It's a draw you sure lucked out*";
+       		displayText.textContent = "It's a draw you sure lucked out";
        		
 
        	   }

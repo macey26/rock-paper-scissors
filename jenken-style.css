@@ -113,20 +113,19 @@
 
   }
 
-  a:link {
-    color: green; 
-    background-color: green; 
+   a:link {
+    background-color: #0000ff; 
     text-decoration: none;
-   
-
   }
 
-  a:hover {
-    border: 2px solid #BADA55;
+   a:hover {
+    position: relative;
+    left:5px;
+     
     }
 
   .btn{
-	  height: 200px;
+	  
   }
 
   #alex{
