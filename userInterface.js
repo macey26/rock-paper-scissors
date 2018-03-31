@@ -5,10 +5,11 @@ const parplinDiv = document.querySelector('#parplinDiv');
 const alexScoreBoard = document.querySelector('#alexScoreBoard');
 const parplinScoreBoard = document.querySelector('#parplinScoreBoard');
 
+
 const displayText = document.createElement('div');
 displayText.classList.add('displayText');
 textBox.setAttribute('style', 'background: black; color:white; fontSize: 16px; margin: 15px -10px -10px 15px; padding: 20px -2px 2px 20px; maxHeight: 55%;');
-displayText.textContent = 'Alex the Kidd Jenkan You must choose "Rock", "Paper" or "Scissors" to play'; 
+textBox.textContent = 'Alex the Kidd Jenken, You must choose "Rock", "Paper" or "Scissors" to play'; 
 
 const alexScore = document.createElement('div');
 alexScore.classList.add('alexScore');
@@ -19,10 +20,11 @@ parplinScore.classList.add('parplinScore');
 parplinScore.setAttribute('style', 'max-width: 90%;color: black; fontSize: 16px; position: relative; top: 100px; left: 130px;' );
 
 
-const alexStand = document.createElement('img');
-alexStand.classList.add("alexStand");
-alexStand.setAttribute('style', 'display: block;  position: relative; top:44px; left: 83px;');
-alexStand.src = "images/alex-standing.png";
+const alexStand = document.querySelector('alexStand');
+
+
+const parplinStand =document.querySelector('alexStand');
+
 
 const alexRock = document.createElement('img');
 alexRock.classList.add("alexRock");
@@ -35,13 +37,6 @@ alexPaper.classList.add("alexPaper");
 const alexScissors = document.createElement('img');
 alexScissors.classList.add("alexScissors");
 
-
-const parplinStand =document.createElement('img');
-parplinStand.classList.add('parplinStand');
-parplinStand.setAttribute('style', 'position:relative; top:65px; left: 140px;');
-parplinStand.src = "images/parplinStanding.png";
-
-
 const parplinRock = document.createElement('img');
 parplinRock.classList.add("parplinRock");
 
@@ -52,6 +47,17 @@ parplinPaper.classList.add("img");
 
 const parplinScissors = document.createElement('img');
 parplinScissors.classList.add("parplinScissors");
+
+const restart = document.querySelector("#restart");
+
+restart.setAttribute("style", "display:none;");
+
+restart.addEventListener('click', ()=>{
+
+	location.reload();
+});
+
+
 
 let computerPlay = () => {
 	let comPick = ["rock", "paper", "scissors"];
@@ -290,21 +296,29 @@ buttons.forEach((a) => {
        console.log(rounds);
 
        if (rounds == 5){
+             
+          restart.setAttribute("style", "display:block;");
 
           if(playerScore < computerScore){   
            displayText.textContent = "Well it looks like thats the way its meant to be you win";
+           
            }
 
            if(playerScore > computerScore){
 
        	   displayText.textContent = " You better accept the inevitable";
+       	 
            }
 
            if(playerScore == computerScore){ 
 
        		displayText.textContent = "It's a draw you sure lucked out*";
+       		
 
        	   }
+          	
+
+
        };
 
     });
@@ -318,13 +332,13 @@ textBox.appendChild(displayText);
 alexScoreBoard.appendChild(alexScore);
 parplinScoreBoard.appendChild(parplinScore);
 alexDiv.appendChild(alexRock);
-alexDiv.appendChild(alexStand);
 alexDiv.appendChild(alexPaper);
 alexDiv.appendChild(alexScissors);
-parplinDiv.appendChild(parplinStand);
 parplinDiv.appendChild(parplinRock);
 parplinDiv.appendChild(parplinPaper);
 parplinDiv.appendChild(parplinScissors);
+
+
 
   game();
 

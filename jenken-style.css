@@ -17,7 +17,7 @@
     display: grid;
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 0;
+    grid-gap: 0 ;
 
   }
   #grid > div {
@@ -53,7 +53,7 @@
 
   .item {
     color: white;
-    padding:0;
+   
   }
 
   .item2{
@@ -61,16 +61,15 @@
   }
 
   .ground{
-    max-height: auto 0;
+   
     max-width: 110%;
-    margin: 0;
-    padding: 0;
+
   }
 
   #textBox{
     background-color: black;
     color: white;
-    max-height: 150px;
+    max-height: 80px;
     max-width: 95%;
     font-size: 16px ;
     line-height: 25px;
@@ -122,24 +121,12 @@
 
   }
 
-  a:visited {
-    color: pink;
-    background-color: transparent;
-    text-decoration: none;
-  }
-
   a:hover {
     border: 2px solid #BADA55;
     }
 
-  a:active {
-    color: yellow;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-
   .btn{
-	  height: 95px;
+	  height: 200px;
   }
 
   #alex{
@@ -199,3 +186,32 @@
   #parplinScoreBoard{
   font-size: 18px !important;
   }
+
+button{
+  background: black;
+  color: white; 
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  padding: 5px;
+  position: relative;
+  left: 65px;
+}
+
+#headerBox{
+  max-height: 100px;
+}
+
+#alexStand{
+  position: relative;
+  top: 73px;
+  left: 80px;
+  display: block;
+  
+}
+
+#parplinStand{
+  position: relative;
+  top:50px;
+  left: 135px;
+  display: block;
+}
