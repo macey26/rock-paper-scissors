@@ -204,6 +204,8 @@ button{
   position: relative;
   top: 73px;
   left: 80px;
+  visibility: visible; 
+  
 }
 
 #parplinStand{

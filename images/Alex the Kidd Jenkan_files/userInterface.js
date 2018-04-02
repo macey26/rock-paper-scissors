@@ -19,18 +19,21 @@ const parplinScore = document.createElement('div');
 parplinScore.classList.add('parplinScore');
 parplinScore.setAttribute('style', 'max-width: 90%;color: black; fontSize: 16px; position: relative; top: 100px; left: 130px;' );
 
-const alexRock = document.createElement('img');
-      alexRock.classList.add("alexRock");
 
-	  const alexPaper = document.createElement('img');
-      alexPaper.classList.add("alexPaper");
-
-
-	const alexScissors = document.createElement('img');
-    alexScissors.classList.add("alexScissors");
 
 const parplinStand =document.querySelector('#parplinStand');
 
+
+const alexRock = document.createElement('img');
+alexRock.classList.add("alexRock");
+
+
+const alexPaper = document.createElement('img');
+alexPaper.classList.add("alexPaper");
+
+
+const alexScissors = document.createElement('img');
+alexScissors.classList.add("alexScissors");
 
 const parplinRock = document.createElement('img');
 parplinRock.classList.add("parplinRock");
@@ -42,9 +45,6 @@ parplinPaper.classList.add("img");
 
 const parplinScissors = document.createElement('img');
 parplinScissors.classList.add("parplinScissors");
-
-const alexStand = document.querySelector('#alexStand');
-
 
 const restart = document.querySelector("#restart");
 
@@ -66,50 +66,34 @@ let computerPlay = () => {
 const alexImages = () => {
      
         let playerSelection = a.id; 
-        console.log(a.id);
 
+        alexStand.setAttribute("style", "visibility: visible");
 
-       
      if (playerSelection === rock){
-     	        alexRock.setAttribute('style', ' display: block; position: relative; top:75px; left: 80px;');
+                 const alexStand = document.querySelector('#alexStand');
+     	        alexRock.setAttribute('style', 'display: block;  position: relative; top:75px; left: 80px;');
 				alexPaper.setAttribute('style', 'display: none;  ');
 				alexScissors.setAttribute('style', 'display: none;  ');
-
-				alexRock.src = "images/alexRock.png";
-
+		        alexStand.setAttribute("style", "visibility: hidden");
 
      }
 
-
-    if (playerSelection === paper){
-     			alexRock.setAttribute('style', 'display: none; ');
-				alexPaper.setAttribute('style', 'display: block;  position: relative; top:75px; left: 80px;' );
-				alexScissors.setAttribute('style', 'display: none;  ');
-
-				alexPaper.src = "images/alexPaper.png";
-     }
-
-   
 };
 
- alexImages();
-
 let playRound = (playerSelection, computerSelection) => {
-  alexImages();
+ 
     switch(playerSelection){
 	    case "rock" :
 		    if (computerSelection === "scissors"){
 
 			answer = "Darn it i loose";
 
-			//alexImages();
-
 				//alexRock.setAttribute('style', 'display: block;  position: relative; top:75px; left: 80px;');
 				//alexPaper.setAttribute('style', 'display: none;  ');
 				//alexScissors.setAttribute('style', 'display: none;  ');
 				//alexStand.setAttribute('style', 'display: none;  ');
 
-			//alexRock.src = "images/alexRock.png";
+			alexRock.src = "images/alexRock.png";
 
 				parplinStand.setAttribute('style', 'display: none;');
 				parplinRock.setAttribute('style', "display: none;");
@@ -127,7 +111,7 @@ let playRound = (playerSelection, computerSelection) => {
 				//alexScissors.setAttribute('style', 'display: none;  ');
 				//alexStand.setAttribute('style', 'display: none;  ');
 			
-			//alexRock.src = "images/alexRock.png";
+			alexRock.src = "images/alexRock.png";
 
 				parplinStand.setAttribute('style', 'display: none;');
 				parplinRock.setAttribute('style', "display: none;");
@@ -140,12 +124,12 @@ let playRound = (playerSelection, computerSelection) => {
 
 	      	 answer = "It's a draw you sure lucked out";
 
-	      	   alexRock.setAttribute('style', 'display: block; position: relative; top:75px; left: 80px;');
+	      	   // alexRock.setAttribute('style', 'display: block; position: relative; top:75px; left: 80px;');
 				//alexPaper.setAttribute('style', 'display: none; ');
 				//alexScissors.setAttribute('style', 'display: none; ');
 				//alexStand.setAttribute('style', 'display: none; ');
 
-	      	  //alexRock.src = "images/alexRock.png";
+	      	  alexRock.src = "images/alexRock.png";
 
 	      	  	parplinStand.setAttribute('style', 'display: none;');
 				parplinRock.setAttribute('style', "display: block; position:relative; top:50px; left: 80px;");
@@ -165,12 +149,12 @@ let playRound = (playerSelection, computerSelection) => {
 
             answer = "Darn it i loose";
 
-            	//alexRock.setAttribute('style', 'display: none; ');
-				//alexPaper.setAttribute('style', 'display: block;  position: relative; top:75px; left: 80px;' );
-				//alexScissors.setAttribute('style', 'display: none;  ');
-				//alexStand.setAttribute('style', 'display: none;  ');
+            	alexRock.setAttribute('style', 'display: none; ');
+				alexPaper.setAttribute('style', 'display: block;  position: relative; top:75px; left: 80px;' );
+				alexScissors.setAttribute('style', 'display: none;  ');
+				alexStand.setAttribute('style', 'display: none;  ');
 
-            //alexPaper.src = "images/alexPaper.png"
+            alexPaper.src = "images/alexPaper.png"
 
             	parplinStand.setAttribute('style', 'display: none;');
 				parplinRock.setAttribute('style', "display: block; position:relative; top:50px; left: 80px;");
@@ -183,12 +167,12 @@ let playRound = (playerSelection, computerSelection) => {
 
 			answer = "I win you got it";
 
-				//alexRock.setAttribute('style', 'display: none; ');
-				//alexPaper.setAttribute('style', 'display: block; position: relative; top:75px; left: 80px; ');
-				//alexScissors.setAttribute('style', 'display: none;  ');
-				//alexStand.setAttribute('style', 'display: none;  ');
+				alexRock.setAttribute('style', 'display: none; ');
+				alexPaper.setAttribute('style', 'display: block; position: relative; top:75px; left: 80px; ');
+				alexScissors.setAttribute('style', 'display: none;  ');
+				alexStand.setAttribute('style', 'display: none;  ');
 
-			//alexPaper.src = "images/alexPaper.png"
+			alexPaper.src = "images/alexPaper.png"
 
 				parplinStand.setAttribute('style', 'display: none;');
 				parplinRock.setAttribute('style', "display: none;");
@@ -200,12 +184,12 @@ let playRound = (playerSelection, computerSelection) => {
 
 	      	 answer = "It's a draw you sure lucked out";
 
-	      	    //alexRock.setAttribute('style', 'display: none; ');
-				//alexPaper.setAttribute('style', 'display: block; position: relative; top:75px; left: 80px; ');
-				//alexScissors.setAttribute('style', 'display: none;  ');
-				//alexStand.setAttribute('style', 'display: none;  ');
+	      	    alexRock.setAttribute('style', 'display: none; ');
+				alexPaper.setAttribute('style', 'display: block; position: relative; top:75px; left: 80px; ');
+				alexScissors.setAttribute('style', 'display: none;  ');
+				alexStand.setAttribute('style', 'display: none;  ');
 
-	      	 //alexPaper.src = "images/alexPaper.png";
+	      	 alexPaper.src = "images/alexPaper.png";
 
 	      	 	parplinStand.setAttribute('style', 'display: none;');
 				parplinRock.setAttribute('style', "display: none; ");
@@ -298,8 +282,6 @@ buttons.forEach((a) => {
    
      let computerSelection = computerPlay();
         let playerSelection = a.id; 
-
-        alexStand.setAttribute('style', 'display: none;');
        
            displayText.textContent = playRound(playerSelection, computerSelection);
 
