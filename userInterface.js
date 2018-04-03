@@ -4,6 +4,8 @@ const alexDiv = document.querySelector('#alexDiv');
 const parplinDiv = document.querySelector('#parplinDiv');
 const alexScoreBoard = document.querySelector('#alexScoreBoard');
 const parplinScoreBoard = document.querySelector('#parplinScoreBoard');
+const alexStand = document.querySelector('#alexStand');
+const parplinStand =document.querySelector('#parplinStand');
 
 
 const displayText = document.createElement('div');
@@ -20,21 +22,16 @@ parplinScore.classList.add('parplinScore');
 parplinScore.setAttribute('style', 'max-width: 90%;color: black; fontSize: 16px; position: relative; top: 100px; left: 130px;' );
 
 const alexRock = document.createElement('img');
-      alexRock.classList.add("alexRock");
+alexRock.classList.add("alexRock");
 
-	  const alexPaper = document.createElement('img');
-      alexPaper.classList.add("alexPaper");
+const alexPaper = document.createElement('img');
+alexPaper.classList.add("alexPaper");
 
-
-	const alexScissors = document.createElement('img');
-    alexScissors.classList.add("alexScissors");
-
-const parplinStand =document.querySelector('#parplinStand');
-
+const alexScissors = document.createElement('img');
+alexScissors.classList.add("alexScissors");
 
 const parplinRock = document.createElement('img');
 parplinRock.classList.add("parplinRock");
-
 
 const parplinPaper = document.createElement('img');
 parplinPaper.classList.add("img");
@@ -43,235 +40,129 @@ parplinPaper.classList.add("img");
 const parplinScissors = document.createElement('img');
 parplinScissors.classList.add("parplinScissors");
 
-const alexStand = document.querySelector('#alexStand');
-
 
 const restart = document.querySelector("#restart");
-
 restart.setAttribute("style", "display:none;");
-
 restart.addEventListener('click', ()=>{
-
 	location.reload();
 });
-
-
 
 let computerPlay = () => {
 	let comPick = ["rock", "paper", "scissors"];
 	let computer = comPick[Math.floor(Math.random() * comPick.length)];
 	return computer;
 };
-	
-const alexImages = () => {
-     
-        let playerSelection = a.id; 
-        console.log(a.id);
 
+let parplinImage = () =>{
 
-       
-     if (playerSelection === rock){
-     	        alexRock.setAttribute('style', ' display: block; position: relative; top:75px; left: 80px;');
-				alexPaper.setAttribute('style', 'display: none;  ');
-				alexScissors.setAttribute('style', 'display: none;  ');
+	let computerSelection = computerPlay();
 
-				alexRock.src = "images/alexRock.png";
+	if (computerSelection === "rock"){
+		parplinStand.setAttribute('style', 'display: none;');
+	    parplinRock.setAttribute('style', "display: block; position:relative; top:50px; left: 80px;");
+		parplinPaper.setAttribute('style', " display: none;");
+		parplinScissors.setAttribute("style", " display: none;");
 
+	    parplinRock.src = "images/parplinRock.png";
 
-     }
+	} else if(computerSelection === "paper"){
 
+		parplinStand.setAttribute('style', 'display: none;');
+		parplinRock.setAttribute('style', "display: none;");
+		parplinPaper.setAttribute('style', " display: block; position:relative; top:50px; left: 80px;");
+		parplinScissors.setAttribute("style", " display: none;");
 
-    if (playerSelection === paper){
-     			alexRock.setAttribute('style', 'display: none; ');
-				alexPaper.setAttribute('style', 'display: block;  position: relative; top:75px; left: 80px;' );
-				alexScissors.setAttribute('style', 'display: none;  ');
+		parplinPaper.src = "images/parplinPaper.png";
 
-				alexPaper.src = "images/alexPaper.png";
-     }
+	} else {
 
-   
+		parplinStand.setAttribute('style', 'display: none;');
+		parplinRock.setAttribute('style', "display: none;");
+		parplinPaper.setAttribute('style', "display: none;");
+		parplinScissors.setAttribute("style", " display: block; position:relative; top:50px; left: 80px;");
+
+		parplinScissors.src = "images/parplinScissors.png";
+
+	}
+
 };
 
- alexImages();
-
 let playRound = (playerSelection, computerSelection) => {
-  alexImages();
+
+	parplinImage();
+
     switch(playerSelection){
 	    case "rock" :
+
+            alexRock.setAttribute('style', 'display: block;  position: relative; top:75px; left: 80px;');
+		    alexPaper.setAttribute('style', 'display: none;  ');
+		    alexScissors.setAttribute('style', 'display: none;  ');
+			alexStand.setAttribute('style', 'display: none;  ');
+
+			alexRock.src = "images/alexRock.png";
+
 		    if (computerSelection === "scissors"){
 
 			answer = "Darn it i loose";
 
-			//alexImages();
-
-				//alexRock.setAttribute('style', 'display: block;  position: relative; top:75px; left: 80px;');
-				//alexPaper.setAttribute('style', 'display: none;  ');
-				//alexScissors.setAttribute('style', 'display: none;  ');
-				//alexStand.setAttribute('style', 'display: none;  ');
-
-			//alexRock.src = "images/alexRock.png";
-
-				parplinStand.setAttribute('style', 'display: none;');
-				parplinRock.setAttribute('style', "display: none;");
-				parplinPaper.setAttribute('style', "display: none;");
-				parplinScissors.setAttribute("style", " display: block; position:relative; top:50px; left: 80px;");
-
-			parplinScissors.src = "images/parplinScissors.png";
-			
 		    } else if (computerSelection === "paper") {
 
 			answer = "I win you got it";
-
-				//alexRock.setAttribute('style', 'display: block;  position: relative; top:75px; left: 80px;');
-				//alexPaper.setAttribute('style', 'display: none;  ');
-				//alexScissors.setAttribute('style', 'display: none;  ');
-				//alexStand.setAttribute('style', 'display: none;  ');
-			
-			//alexRock.src = "images/alexRock.png";
-
-				parplinStand.setAttribute('style', 'display: none;');
-				parplinRock.setAttribute('style', "display: none;");
-				parplinPaper.setAttribute('style', " display: block; position:relative; top:50px; left: 80px;");
-				parplinScissors.setAttribute("style", " display: none;");
-
-			parplinPaper.src = "images/parplinPaper.png";
 			
 		    }else {
 
 	      	 answer = "It's a draw you sure lucked out";
 
-	      	   alexRock.setAttribute('style', 'display: block; position: relative; top:75px; left: 80px;');
-				//alexPaper.setAttribute('style', 'display: none; ');
-				//alexScissors.setAttribute('style', 'display: none; ');
-				//alexStand.setAttribute('style', 'display: none; ');
-
-	      	  //alexRock.src = "images/alexRock.png";
-
-	      	  	parplinStand.setAttribute('style', 'display: none;');
-				parplinRock.setAttribute('style', "display: block; position:relative; top:50px; left: 80px;");
-				parplinPaper.setAttribute('style', " display: none;");
-				parplinScissors.setAttribute("style", " display: none;");
-
-
-	      	 parplinRock.src = "images/parplinRock.png";
-	     
 	        }
 
 	    break; 
 
 	    case "paper": 
 
+	        alexRock.setAttribute('style', 'display: none; ');
+			alexPaper.setAttribute('style', 'display: block;  position: relative; top:75px; left: 80px;' );
+			alexScissors.setAttribute('style', 'display: none;  ');
+			alexStand.setAttribute('style', 'display: none;  ');
+
+			alexPaper.src = "images/alexPaper.png"
+
 		    if (computerSelection === "rock") { 
 
             answer = "Darn it i loose";
-
-            	//alexRock.setAttribute('style', 'display: none; ');
-				//alexPaper.setAttribute('style', 'display: block;  position: relative; top:75px; left: 80px;' );
-				//alexScissors.setAttribute('style', 'display: none;  ');
-				//alexStand.setAttribute('style', 'display: none;  ');
-
-            //alexPaper.src = "images/alexPaper.png"
-
-            	parplinStand.setAttribute('style', 'display: none;');
-				parplinRock.setAttribute('style', "display: block; position:relative; top:50px; left: 80px;");
-				parplinPaper.setAttribute('style', " display: none;");
-				parplinScissors.setAttribute("style", " display: none;");
-
-            parplinRock.src = "images/parplinRock.png";
 
 		    } else if (computerSelection === "scissors") {
 
 			answer = "I win you got it";
 
-				//alexRock.setAttribute('style', 'display: none; ');
-				//alexPaper.setAttribute('style', 'display: block; position: relative; top:75px; left: 80px; ');
-				//alexScissors.setAttribute('style', 'display: none;  ');
-				//alexStand.setAttribute('style', 'display: none;  ');
-
-			//alexPaper.src = "images/alexPaper.png"
-
-				parplinStand.setAttribute('style', 'display: none;');
-				parplinRock.setAttribute('style', "display: none;");
-				parplinPaper.setAttribute('style', "display: none;");
-				parplinScissors.setAttribute("style", " display: block; position:relative; top:50px; left: 80px;");
-
-			parplinScissors.src = "images/parplinScissors.png";
 		    } else {
 
 	      	 answer = "It's a draw you sure lucked out";
 
-	      	    //alexRock.setAttribute('style', 'display: none; ');
-				//alexPaper.setAttribute('style', 'display: block; position: relative; top:75px; left: 80px; ');
-				//alexScissors.setAttribute('style', 'display: none;  ');
-				//alexStand.setAttribute('style', 'display: none;  ');
-
-	      	 //alexPaper.src = "images/alexPaper.png";
-
-	      	 	parplinStand.setAttribute('style', 'display: none;');
-				parplinRock.setAttribute('style', "display: none; ");
-				parplinPaper.setAttribute('style', " display: block; position:relative; top:50px; left: 80px;");
-				parplinScissors.setAttribute("style", " display: none;");
-
-	      	 parplinPaper.src = "images/parplinPaper.png";
 	        }
 
         break;
 
 	    case "scissors": 
 
-		    if (computerSelection === "paper"){
-
-			answer = "Darn it i loose";
-
-				alexRock.setAttribute('style', 'display: none; ');
-				alexPaper.setAttribute('style', 'display: none;');
-				alexScissors.setAttribute('style', 'display: block; position: relative; top:75px; left: 80px; ');
-				alexStand.setAttribute('style', 'display: none;  ');
+	        alexRock.setAttribute('style', 'display: none; ');
+			alexPaper.setAttribute('style', 'display: none;');
+			alexScissors.setAttribute('style', 'display: block; position: relative; top:75px; left: 80px; ');
+			alexStand.setAttribute('style', 'display: none;  ');
 
 			alexScissors.src = "images/alexScissors.png";
 
-				parplinStand.setAttribute('style', 'display: none;');
-				parplinRock.setAttribute('style', "display: none; ");
-				parplinPaper.setAttribute('style', " display: block; position:relative; top:50px; left: 80px;");
-				parplinScissors.setAttribute("style", " display: none;");
+		    if (computerSelection === "paper"){
 
-			parplinPaper.src = "images/parplinPaper.png";
+			answer = "Darn it i loose";
 
 		    }else if(computerSelection === "rock") {
 
 		    answer = "I win you got it";
 
-		        alexRock.setAttribute('style', 'display: none; ');
-				alexPaper.setAttribute('style', 'display: none;');
-				alexScissors.setAttribute('style', 'display: block; position: relative; top:75px; left: 80px; ');
-				alexStand.setAttribute('style', 'display: none;  ');
-
-		    alexScissors.src = "images/alexScissors.png";
-
-		    	parplinStand.setAttribute('style', 'display: none;');
-				parplinRock.setAttribute('style', "display: block; position:relative; top:50px; left: 80px;");
-				parplinPaper.setAttribute('style', " display: none;");
-				parplinScissors.setAttribute("style", " display: none;");
-
-             parplinRock.src = "images/parplinRock.png";
-
 	        } else {
 
 	      	 answer = "It's a draw you sure lucked out";
 
-	      	    alexRock.setAttribute('style', 'display: none; ');
-				alexPaper.setAttribute('style', 'display: none;');
-				alexScissors.setAttribute('style', 'display: block; position: relative; top:75px; left: 80px; ');
-				alexStand.setAttribute('style', 'display: none;  ');
-
-	      	 alexScissors.src = "images/alexScissors.png";
-
-	      	 	parplinStand.setAttribute('style', 'display: none;');
-				parplinRock.setAttribute('style', "display: none;");
-				parplinPaper.setAttribute('style', "display: none;");
-				parplinScissors.setAttribute("style", " display: block; position:relative; top:50px; left: 80px;");
-
-	      	parplinScissors.src = "images/parplinScissors.png";
 	        }
 
 	    break;
@@ -283,16 +174,14 @@ let playRound = (playerSelection, computerSelection) => {
 	 return answer;
 }; 
 
-
-
 let game = () => {
     let playerScore = 0;
     let computerScore = 0;
     let rounds = 0;
 
-const buttons = document.querySelectorAll('a');
+  const buttons = document.querySelectorAll('a');
 
-buttons.forEach((a) => {
+  buttons.forEach((a) => {
  
    a.addEventListener('click', (e) => {
    
@@ -300,8 +189,8 @@ buttons.forEach((a) => {
         let playerSelection = a.id; 
 
         alexStand.setAttribute('style', 'display: none;');
-       
-           displayText.textContent = playRound(playerSelection, computerSelection);
+
+        displayText.textContent = playRound(playerSelection, computerSelection);
 
             if (answer === "I win you got it"){
 
@@ -347,19 +236,15 @@ buttons.forEach((a) => {
 
        		displayText.textContent = "It's a draw you sure lucked out";
        		
-
        	   }
           	
-
-
        };
 
     });
 
-});
+  });
 
-  	
-  }; 
+}; 
 
 textBox.appendChild(displayText);
 alexScoreBoard.appendChild(alexScore);
@@ -371,7 +256,4 @@ parplinDiv.appendChild(parplinRock);
 parplinDiv.appendChild(parplinPaper);
 parplinDiv.appendChild(parplinScissors);
 
-
-
   game();
-
