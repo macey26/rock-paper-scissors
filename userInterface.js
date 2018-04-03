@@ -7,7 +7,6 @@ const parplinScoreBoard = document.querySelector('#parplinScoreBoard');
 const alexStand = document.querySelector('#alexStand');
 const parplinStand =document.querySelector('#parplinStand');
 
-
 const displayText = document.createElement('div');
 displayText.classList.add('displayText');
 displayText.setAttribute('style', 'background: black; color:white; fontSize: 16px; margin: 15px -10px -10px 15px; padding: 20px -2px 2px 20px; maxHeight: 55%;');
@@ -35,7 +34,6 @@ parplinRock.classList.add("parplinRock");
 
 const parplinPaper = document.createElement('img');
 parplinPaper.classList.add("img");
-
 
 const parplinScissors = document.createElement('img');
 parplinScissors.classList.add("parplinScissors");
