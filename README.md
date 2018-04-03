@@ -1,37 +1,6 @@
-## Welcome to GitHub Pages
+### Alex the Kidd Jenkan Game
+Made for the The Odin projects Paper Scissors project.
 
-You can use the [editor on GitHub](https://github.com/macey26/rock-paper-scissors/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+I was originally going to use the basic rock paper scissors them for the game, until i remembered that Alex the Kidd was one of my favourite games growing up and one of the main challenges was to win Jenken games to get to the next level. So I decided when learning DOM manipulation to use the Alex the Kidd theme. Most of the images were recreated to suit the game.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/macey26/rock-paper-scissors/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+It took weeks to complete which was longer than expected but I felt a sense of nostalgia to get the game right.
